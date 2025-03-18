@@ -22,17 +22,22 @@ export default async function Courses() {
           </a>
         </nav>
       </header>
-      <main className="p-6">
-        <h2 className="text-xl font-semibold mb-4">My First Course</h2>
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-lg font-bold">Lessons</h3>
-          <ul>
-            {lessons.map((lesson: any) => (
-              <li key={lesson._id} className="my-2">
-                <strong>{lesson.title}</strong>: {lesson.description}
-              </li>
-            ))}
-          </ul>
+      <main className="p-6 max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">
+          My First Course
+        </h2>
+        <div className="grid gap-6">
+          {lessons.map((lesson: any) => (
+            <div
+              key={lesson._id}
+              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition"
+            >
+              <h3 className="text-xl font-semibold text-blue-600">
+                {lesson.title}
+              </h3>
+              <p className="text-gray-600 mt-2">{lesson.description}</p>
+            </div>
+          ))}
         </div>
       </main>
       <footer className="bg-gray-800 text-white p-4 text-center">
